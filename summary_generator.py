@@ -3,15 +3,11 @@ from topic_analyzer import TopicAnalyzer
 
 
 class SummaryGenerator:
-    """Class for generating analysis summaries."""
-    
     def __init__(self, topic_analyzer: TopicAnalyzer):
-        """Initialize with a topic analyzer instance."""
         self.topic_analyzer = topic_analyzer
     
     def generate_summary(self, chat_data: Dict, keywords: List[Tuple[str, float]], 
                         use_tfidf: bool = True, use_nltk: bool = True) -> str:
-        """Generate a comprehensive summary of the conversation."""
         method = "TF-IDF" if use_tfidf else "Frequency Analysis"
         processing = "NLTK Enhanced" if use_nltk else "Basic Processing"
         
@@ -47,7 +43,6 @@ class SummaryGenerator:
         return '\n'.join(summary)
     
     def generate_multi_file_summary(self, file_results: List[Dict], overall_stats: Dict) -> str:
-        """Generate summary for multiple file analysis."""
         results = [
             f"ANALYSIS OF {len(file_results)} CHAT LOG FILES",
             "=" * 60
