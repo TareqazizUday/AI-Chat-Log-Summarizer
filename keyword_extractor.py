@@ -5,14 +5,10 @@ from text_processor import TextProcessor
 
 
 class KeywordExtractor:
-    """Class for extracting keywords from text using various methods."""
-    
     def __init__(self, text_processor: TextProcessor):
-        """Initialize with a text processor instance."""
         self.text_processor = text_processor
     
     def calculate_tf_idf(self, documents: List[str], top_n: int = 5) -> List[Tuple[str, float]]:
-        """Calculate TF-IDF scores for keywords across documents."""
         if not documents:
             return []
         
@@ -38,7 +34,6 @@ class KeywordExtractor:
         return sorted(tfidf_scores.items(), key=lambda x: x[1], reverse=True)[:top_n]
     
     def extract_keywords_basic(self, text_list: List[str], top_n: int = 5) -> List[Tuple[str, int]]:
-        """Basic keyword extraction using frequency analysis."""
         all_tokens = []
         for text in text_list:
             all_tokens.extend(self.text_processor.preprocess_text(text))
@@ -47,7 +42,6 @@ class KeywordExtractor:
     
     def extract_keywords(self, text_list: List[str], top_n: int = 5, 
                         use_tfidf: bool = True) -> List[Tuple[str, float]]:
-        """Extract keywords using either TF-IDF or basic frequency analysis."""
         if use_tfidf and len(text_list) > 1:
             return self.calculate_tf_idf(text_list, top_n)
         
