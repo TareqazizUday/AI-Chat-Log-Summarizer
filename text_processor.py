@@ -27,10 +27,7 @@ except ImportError:
 
 
 class TextProcessor:
-    """Class for handling text preprocessing operations."""
-    
     def __init__(self, use_nltk: bool = True):
-        """Initialize text processor with optional NLTK support."""
         self.use_nltk = use_nltk and NLTK_AVAILABLE
         
         if self.use_nltk:
@@ -54,7 +51,6 @@ class TextProcessor:
             }
     
     def preprocess_text(self, text: str) -> List[str]:
-        """Preprocess text for keyword extraction."""
         if self.use_nltk:
             tokens = word_tokenize(text.lower())
             tokens = [token for token in tokens if token.isalpha() and len(token) > 2]
@@ -68,5 +64,4 @@ class TextProcessor:
     
     @property
     def is_nltk_available(self) -> bool:
-        """Check if NLTK is available."""
         return self.use_nltk
