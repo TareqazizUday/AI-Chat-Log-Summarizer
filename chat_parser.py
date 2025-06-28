@@ -2,10 +2,7 @@ from typing import Dict
 
 
 class ChatParser:
-    """Class for parsing chat log files."""
-    
     def parse_chat_log(self, file_path: str) -> Dict:
-        """Parse a chat log file and extract messages by speaker."""
         with open(file_path, 'r', encoding='utf-8') as file:
             content = file.read()
         
@@ -54,7 +51,6 @@ class ChatParser:
         return chat_data
     
     def _add_message(self, chat_data: Dict, speaker: str, message: str) -> None:
-        """Helper method to add a message to the chat data."""
         if speaker == 'user':
             chat_data['user_messages'].append(message)
         else:
