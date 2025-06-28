@@ -9,8 +9,6 @@ from summary_generator import SummaryGenerator
 
 
 class ChatLogAnalyzer:
-    """Main class for analyzing chat logs between users and AI assistants."""
-    
     def __init__(self, use_nltk: bool = True):
         """Initialize the analyzer with all required components."""
         self.text_processor = TextProcessor(use_nltk=use_nltk)
@@ -20,7 +18,6 @@ class ChatLogAnalyzer:
         self.summary_generator = SummaryGenerator(self.topic_analyzer)
     
     def analyze_single_file(self, file_path: str, use_tfidf: bool = True) -> str:
-        """Analyze a single chat log file."""
         try:
             chat_data = self.chat_parser.parse_chat_log(file_path)
             keywords = self.keyword_extractor.extract_keywords(chat_data['all_text'], use_tfidf=use_tfidf)
@@ -29,7 +26,6 @@ class ChatLogAnalyzer:
             return f"Error analyzing {file_path}: {str(e)}"
     
     def analyze_multiple_files(self, folder_path: str, use_tfidf: bool = True) -> str:
-        """Analyze multiple chat log files in a folder."""
         if not os.path.isdir(folder_path):
             return f"Error: {folder_path} is not a valid directory"
         
@@ -84,7 +80,6 @@ class ChatLogAnalyzer:
         return self.summary_generator.generate_multi_file_summary(file_results, overall_stats)
     
     def save_summary(self, summary: str, output_path: str) -> bool:
-        """Save summary to a file."""
         try:
             with open(output_path, 'w', encoding='utf-8') as f:
                 f.write(summary)
