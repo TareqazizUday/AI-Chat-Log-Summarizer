@@ -1,0 +1,26 @@
+======================================================================
+                    CHAT LOG ANALYSIS SUMMARY
+======================================================================
+
+CONVERSATION STATISTICS:
+  Total exchanges: 7
+  User messages: 7
+  AI messages: 7
+  Total messages: 14
+
+ANALYSIS METHOD:
+  Keyword extraction: TF-IDF
+  Text processing: NLTK Enhanced
+
+TOP KEYWORDS (TF-IDF):
+  1. Explain (TF-IDF: 0.660)
+  2. Doe (TF-IDF: 0.660)
+  3. Work (TF-IDF: 0.660)
+  4. Give (TF-IDF: 0.632)
+  5. Machine (TF-IDF: 0.626)
+
+CONVERSATION TOPICS:
+  Artificial Intelligence: machine
+  Education: explain
+
+======================================================================

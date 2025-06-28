@@ -1,0 +1,42 @@
+ANALYSIS OF 4 CHAT LOG FILES
+============================================================
+
+FILE: data_science.txt
+----------------------------------------
+Exchanges: 6
+User messages: 6
+AI messages: 6
+Top keywords: data, project, skill
+
+FILE: ml_conversation.txt
+----------------------------------------
+Exchanges: 7
+User messages: 7
+AI messages: 7
+Top keywords: learning, machine, pattern
+
+FILE: python_help.txt
+----------------------------------------
+Exchanges: 6
+User messages: 6
+AI messages: 6
+Top keywords: variable, python, code
+
+FILE: web_development.txt
+----------------------------------------
+Exchanges: 12
+User messages: 12
+AI messages: 12
+Top keywords: web, development, like
+
+OVERALL STATISTICS:
+Total files analyzed: 4
+Total exchanges: 31
+Total user messages: 31
+Total AI messages: 31
+Most common keywords across all files:
+  1. data (appears in 2 analyses)
+  2. project (appears in 2 analyses)
+  3. python (appears in 2 analyses)
+  4. skill (appears in 1 analyses)
+  5. scientist (appears in 1 analyses)

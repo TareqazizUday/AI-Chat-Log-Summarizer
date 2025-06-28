@@ -1,0 +1,27 @@
+======================================================================
+                    CHAT LOG ANALYSIS SUMMARY
+======================================================================
+
+CONVERSATION STATISTICS:
+  Total exchanges: 7
+  User messages: 7
+  AI messages: 7
+  Total messages: 14
+
+ANALYSIS METHOD:
+  Keyword extraction: Frequency Analysis
+  Text processing: NLTK Enhanced
+
+TOP KEYWORDS (Frequency Analysis):
+  1. Learning (Frequency: 14)
+  2. Machine (Frequency: 7)
+  3. Pattern (Frequency: 4)
+  4. Data (Frequency: 4)
+  5. Python (Frequency: 4)
+
+CONVERSATION TOPICS:
+  Programming: python
+  Artificial Intelligence: learning, machine
+  Data Science: pattern, data
+
+======================================================================
