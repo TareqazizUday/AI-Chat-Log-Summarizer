@@ -10,7 +10,6 @@ from summary_generator import SummaryGenerator
 
 class ChatLogAnalyzer:
     def __init__(self, use_nltk: bool = True):
-        """Initialize the analyzer with all required components."""
         self.text_processor = TextProcessor(use_nltk=use_nltk)
         self.chat_parser = ChatParser()
         self.keyword_extractor = KeywordExtractor(self.text_processor)
