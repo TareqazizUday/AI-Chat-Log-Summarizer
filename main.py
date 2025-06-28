@@ -5,14 +5,10 @@ from chat_analyzer import ChatLogAnalyzer
 
 
 class MainApp:
-    """Main application class for chat log analyzer."""
-    
     def __init__(self):
-        """Initialize the main application."""
         self.parser = self._create_parser()
     
     def _create_parser(self) -> argparse.ArgumentParser:
-        """Create and configure argument parser."""
         parser = argparse.ArgumentParser(description='AI Chat Log Summarizer with TF-IDF Support')
         
         parser.add_argument('input', help='Path to chat log file or folder')
@@ -25,7 +21,6 @@ class MainApp:
         return parser
     
     def _validate_input(self, args) -> None:
-        """Validate input arguments."""
         if not os.path.exists(args.input):
             print(f"Error: Path '{args.input}' does not exist.")
             sys.exit(1)
@@ -39,7 +34,6 @@ class MainApp:
             sys.exit(1)
     
     def _perform_analysis(self, analyzer: ChatLogAnalyzer, args, use_tfidf: bool) -> str:
-        """Perform the analysis based on arguments."""
         if args.multiple:
             print(f"Analyzing multiple files in: {args.input}")
             return analyzer.analyze_multiple_files(args.input, use_tfidf=use_tfidf)
@@ -48,7 +42,6 @@ class MainApp:
             return analyzer.analyze_single_file(args.input, use_tfidf=use_tfidf)
     
     def run(self) -> None:
-        """Run the main application."""
         args = self.parser.parse_args()
         
         self._validate_input(args)
@@ -79,7 +72,6 @@ class MainApp:
 
 
 def main():
-    """Main function to run the chat log analyzer."""
     app = MainApp()
     app.run()
 
