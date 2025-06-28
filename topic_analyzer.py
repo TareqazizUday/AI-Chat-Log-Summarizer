@@ -1,11 +1,7 @@
 from typing import Dict, List, Tuple, Set
 
-
-class TopicAnalyzer:
-    """Class for analyzing conversation topics based on keywords."""
-    
+class TopicAnalyzer: 
     def __init__(self):
-        """Initialize topic analyzer with predefined topic categories."""
         self.topic_categories = {
             "programming": {
                 'python', 'code', 'programming', 'development', 'software', 'algorithm', 
@@ -26,7 +22,6 @@ class TopicAnalyzer:
         }
     
     def analyze_conversation_topics(self, keywords: List[Tuple[str, float]]) -> Dict[str, List[str]]:
-        """Analyze conversation topics based on keywords."""
         if not keywords:
             return {"general": []}
         
@@ -43,5 +38,4 @@ class TopicAnalyzer:
         return result if result else {"general": top_words[:3]}
     
     def add_topic_category(self, topic_name: str, keywords: Set[str]) -> None:
-        """Add a new topic category."""
         self.topic_categories[topic_name] = keywords
